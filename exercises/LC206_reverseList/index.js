@@ -1,19 +1,18 @@
 const reverseList = head => {
-	let prev = null;
+	// undefined -> a -> b -> c -> d
+	// undefined <- a <- b <- c <- d
+	
+	let previous = null;
 	let current = head;
 
 	while (current) {
-		let temp = current.next;
-
-		// Change direction
-		current.next = prev;
-
-		// Move prev an current up by 1
-		prev = current;
-		current = temp;
+		let next = current.next; // save next;
+		current.next = previous; // current next pointer directed to previous;
+		previous = current; // prevoius move to current;
+		current = next; // current move to next which save before
 	}
 
-	return prev;
+	return previous;
 };
 
 module.exports = reverseList;
