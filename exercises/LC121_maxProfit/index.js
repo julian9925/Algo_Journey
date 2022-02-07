@@ -1,15 +1,14 @@
-var maxProfit = function(prices) {
-    let maxProfit = 0;
-    let bestBuyPrice = prices[0];
+function maxProfit(nums) {
+	let maxProfit = 0;
+	let bestBuyPrice = nums[0];
 
-    for (let index = 0; index < prices.length; index++) {
-        const currentPrice = prices[index];
-        const currentProfit = currentPrice - bestBuyPrice;
-        bestBuyPrice = Math.min(currentPrice, bestBuyPrice);
-        maxProfit = Math.max(currentProfit, maxProfit);
-    }
+	for (let index = 0; index < nums.length; index++) {
+		const currentPrice = nums[index];
+		bestBuyPrice = (currentPrice < bestBuyPrice) ? currentPrice : bestBuyPrice;
+		maxProfit = Math.max(maxProfit, currentPrice - bestBuyPrice);
+	}
 
-    return maxProfit;
-};
+	return maxProfit;
+}
 
 module.exports = maxProfit;
