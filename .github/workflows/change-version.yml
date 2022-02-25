@@ -1,13 +1,9 @@
 name: Modify Package Version
 
-on:
-  push:
-    # Pattern matched against refs/tags
-    tags:
-      - 'v*'
+on: push
 
 jobs:
-  build:
+  modify-version:
     runs-on: ubuntu-20.04
     concurrency: ci-${{ github.ref }}
     env:
@@ -25,4 +21,4 @@ jobs:
         uses: technote-space/package-version-check-action@v1
         with:
           PACKAGE_DIR: exercises
-          NEXT_VERSION: ${{ env.RELEASE_VERSION }}
+          BRANCH_PREFIX: release-
