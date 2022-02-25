@@ -2,7 +2,7 @@ name: Modify Package Version
 on:
   push:
     branches:
-      - 'releases-**'
+      - 'release-**'
 
 jobs:
   modify-version:
