@@ -23,6 +23,6 @@ jobs:
       - uses: MYXOMOPX/modify-pkg-json@master
         id: setcmnver
         with:
-          target: ./package.json
+          target: ./exercises/package.json
           action: "set_version"
           argument: ${{ env.RELEASE_VERSION }}
