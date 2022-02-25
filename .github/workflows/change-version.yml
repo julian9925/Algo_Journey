@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     concurrency: ci-${{ github.ref }}
     env:
-      working-directory: ./exercises
+      working-directory: exercises
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 12.8
