@@ -11,9 +11,8 @@ class Graph {
 
         for (let index = 0; index < edges.length; index++) {
             adjacenyList[edges[index][0]].push(edges[index][1]);
+            adjacenyList[edges[index][1]].push(edges[index][0]);
         }
-
-        console.log(adjacenyList);
 
         while (stack.length !== 0) {
             const node = stack.pop() as number;
@@ -32,8 +31,6 @@ class Graph {
                 stack.push(neighbor);
             }
         }
-
-        console.log(seen);
 
         return false;
     }
