@@ -20,9 +20,9 @@ jobs:
           node-version: 12.8
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - uses: MYXOMOPX/modify-pkg-json@master
-        id: setcmnver
+       # Use this GitHub Action
+      - name: Check package version
+        uses: technote-space/package-version-check-action@v1
         with:
-          target: ./exercises/package.json
-          action: "set_version"
-          argument: ${{ env.RELEASE_VERSION }}
+          PACKAGE_DIR: exercises
+          NEXT_VERSION: ${{ env.RELEASE_VERSION }}
