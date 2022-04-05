@@ -1,4 +1,4 @@
-class Graph {
+export default class Graph {
     validGraph(size: number, edges: number[][], start: number, end: number) {
         let adjacenyList = new Array(size);
         for (let index = 0; index < adjacenyList.length; index++) {
@@ -35,6 +35,3 @@ class Graph {
         return false;
     }
 }
-
-const gh = new Graph();
-console.log(gh.validGraph(6, [[0,1],[0,2],[3,5],[5,4],[4,3]], 0, 5));

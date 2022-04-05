@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var Graph = /** @class */ (function () {
     function Graph() {
     }
@@ -10,8 +12,8 @@ var Graph = /** @class */ (function () {
         var seen = [];
         for (var index = 0; index < edges.length; index++) {
             adjacenyList[edges[index][0]].push(edges[index][1]);
+            adjacenyList[edges[index][1]].push(edges[index][0]);
         }
-        console.log(adjacenyList);
         while (stack.length !== 0) {
             var node = stack.pop();
             if (node === end) {
@@ -26,10 +28,10 @@ var Graph = /** @class */ (function () {
                 stack.push(neighbor);
             }
         }
-        console.log(seen);
         return false;
     };
     return Graph;
 }());
+exports["default"] = Graph;
 var gh = new Graph();
 console.log(gh.validGraph(6, [[0, 1], [0, 2], [3, 5], [5, 4], [4, 3]], 0, 5));

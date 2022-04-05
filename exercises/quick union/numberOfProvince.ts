@@ -52,5 +52,5 @@ let matrix = [
     [0, 0, 0, 0, 0, 1]
 ];
 
-const test = new NumOfProvince(matrix.length);
-console.log(test.findCirumNUmber(matrix));
+const numOfProvince = new NumOfProvince(matrix.length);
+console.log(numOfProvince.findCirumNUmber(matrix));
