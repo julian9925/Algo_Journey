@@ -20,5 +20,14 @@ jobs:
           PACKAGE_DIR: exercises
           BRANCH_PREFIX: release-
           run: npx sort-package-json
-      - name: move file
-        run: ls
+
+  move-file:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./exercises
+    needs: modify-version
+    steps:
+     - run: mv -f ../package.json package.json
+
+     
