@@ -28,6 +28,7 @@ jobs:
         working-directory: .
     needs: modify-version
     steps:
+    - uses: actions/checkout@v2
     - name: check file
       run: |
         ls
