@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-20.04
     needs: modify-version
     steps:
-     - run: mv -f package.json ./exercises/package.json
+    - name: check file
+      run: ls
+    - name: move file
+      run: mv -f package.json ./exercises/package.json
 
      
