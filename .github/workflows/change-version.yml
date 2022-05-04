@@ -17,5 +17,6 @@ jobs:
       - name: Check package version
         uses: technote-space/package-version-check-action@v1
         with:
+          PACKAGE_DIR: exercises
           BRANCH_PREFIX: release-
           run: npx sort-package-json
