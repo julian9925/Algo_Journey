@@ -18,3 +18,4 @@ jobs:
         uses: technote-space/package-version-check-action@v1
         with:
           BRANCH_PREFIX: release-
+          run: npx sort-package-json
