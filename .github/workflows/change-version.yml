@@ -21,4 +21,4 @@ jobs:
           BRANCH_PREFIX: release-
           run: npx sort-package-json
       - name: move file
-        run: mv -f ../package.json package.json
+        run: ls
