@@ -5,16 +5,16 @@ on:
       - 'release-**'
 
 jobs:
+ defaults:
+    run:
+      working-directory: ./exercises
   modify-version:
     runs-on: ubuntu-20.04
     concurrency: ci-${{ github.ref }}
-    env:
-      working-directory: exercises
     steps:
       - uses: actions/checkout@v2
       # Use this GitHub Action
       - name: Check package version
         uses: technote-space/package-version-check-action@v1
         with:
-          PACKAGE_DIR: exercises
           BRANCH_PREFIX: release-
