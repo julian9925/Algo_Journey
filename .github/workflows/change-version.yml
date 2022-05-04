@@ -23,10 +23,14 @@ jobs:
 
   move-file:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: .
     needs: modify-version
     steps:
     - name: check file
-      run: ls
+      run: |
+        ls
     - name: move file
       run: mv -f package.json ./exercises/package.json
 
