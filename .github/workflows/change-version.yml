@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-20.04
     defaults:
       run:
-        working-directory: ./exercises
+        working-directory: exercises
     needs: modify-version
     steps:
      - run: mv -f ../package.json package.json
