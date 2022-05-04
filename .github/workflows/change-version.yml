@@ -5,11 +5,11 @@ on:
       - 'release-**'
 
 jobs:
- defaults:
-    run:
-      working-directory: ./exercises
   modify-version:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./exercises
     concurrency: ci-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
