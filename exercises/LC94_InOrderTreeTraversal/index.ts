@@ -37,7 +37,7 @@ function inorderTraversal(root: TreeNode | null): number[] {
 };
 
 
-function prerderTraversal(root: TreeNode | null): number[] {
+function preorderTraversal(root: TreeNode | null): number[] {
 	const nodeStack: TreeNode[] = [];
 	let result: number[] = [];
 	if (!root) return result;
@@ -63,6 +63,29 @@ function prerderTraversal(root: TreeNode | null): number[] {
 	return result;
 };
 
+// use preorder traversal thought
+// a) Instead of printing an item, we push it to a stack. 
+// b) We push the left subtree before the right subtree.
+
+function postorderTraversal(root: TreeNode | null): number[] {
+	if (!root) return [];
+
+	const result: number[] = [];
+	const stack: TreeNode[] = [];
+
+	let current = root;
+	stack.push(current);
+
+	while(stack.length > 0) {
+		current = stack.pop() as TreeNode;
+		result.push(current.val);
+
+		if (current.left) stack.push(current.left);
+		if (current.right) stack.push(current.right);
+	}
+
+	return result.reverse();
+};
 
 // function inOrder(root: TreeNode) { 
 // 	root.left && inOrder(root.left) 
