@@ -1,14 +1,11 @@
 function maxSubArray(nums) {
-    let dp = [nums[0]];
-    let maxSum = nums[0];
-    
-    for (let index = 1; index < nums.length; index++) {
-        const num = nums[index];
-        dp[index] = Math.max(dp[index - 1] + num, num);
-        maxSum = Math.max(maxSum, dp[index]);
+    var sumTable = [nums[0]];
+    var maxSum = nums[0];
+    for (var i = 1; i < nums.length; i++) {
+        sumTable[i] = Math.max(nums[i], sumTable[i - 1] + nums[i]);
+        maxSum = Math.max(maxSum, sumTable[i]);
     }
-    
     return maxSum;
 }
-
+;
 module.exports = maxSubArray;
