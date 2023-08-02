@@ -9,7 +9,7 @@ const reverseList = head => {
 		current = next;
 	}
 
-	return previous;
+	return previous; //the last node visited
 };
 
 module.exports = reverseList;
