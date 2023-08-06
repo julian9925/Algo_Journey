@@ -1,24 +1,25 @@
-var generateParenthesis = function(n) {
-	let res = [];
-	ParenthesisDFS(n, n, '', res);
-	return res;
-};
-
-function ParenthesisDFS(left, right, generateString, result) {
-	if (left > right) {
-		return 
-	}
-	if (left === 0 && right === 0) {
-		return result.push(generateString);
-	}
-	else {
-		if (left > 0)  {
-			ParenthesisDFS(left - 1, right, generateString + '(', result);
-		}
-		if (right > 0) { 
-			ParenthesisDFS(left, right - 1, generateString + ')', result);
-		}
-	}
+// Recurrsicve approach
+function generateParenthesis(n) {
+    var res = [];
+    var queue = [];
+    queue.push({ str: "", left: n, right: n });
+    while (!!queue.length) {
+        var current = queue.shift();
+        if (current.left > current.right) {
+            continue;
+        }
+        if (current.left === 0 && current.right === 0) {
+            res.push(current.str);
+        }
+        else {
+            if (current.left > 0) {
+                queue.push({ str: current.str + '(', left: current.left - 1, right: current.right });
+            }
+            if (current.right > 0) {
+                queue.push({ str: current.str + ')', left: current.left, right: current.right - 1 });
+            }
+        }
+    }
+    return res;
 }
-
-module.exports = generateParenthesis;
+console.log(generateParenthesis(3));
