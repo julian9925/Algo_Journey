@@ -17,7 +17,7 @@ function inorderTraversal(root: TreeNode | null): number[] {
 
 	let curretNode = root;
 
-	while (!!curretNode || nodeStack.length > 0) {
+	while (!!curretNode || nodeStack.length > 0) { 
 		
 		if (!!curretNode) {
 			// continue to left
@@ -58,8 +58,6 @@ function preorderTraversal(root: TreeNode | null): number[] {
 		}
 	}
 	
-
-
 	return result;
 };
 
