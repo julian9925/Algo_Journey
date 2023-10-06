@@ -1,4 +1,4 @@
-const letterCombinations = require("./index");
+const letterCombinations = require("./sol");
 
 test("letterCombinations('23') returns ['ad','ae','af','bd','be','bf','cd','ce','cf']", () => {
   expect(letterCombinations("23").sort()).toEqual([
